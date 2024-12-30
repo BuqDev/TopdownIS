@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx6u5riaqat0x"]
+
+[ext_resource type="PackedScene" uid="uid://b28dj5k7kxhkx" path="res://Nodes/Player/nd_player.tscn" id="1_ec0yw"]
+[ext_resource type="PackedScene" uid="uid://bav8jmefpc8wi" path="res://Nodes/Crate/nd_crate.tscn" id="2_x1kg3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="YSorted" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="YSorted" instance=ExtResource("1_ec0yw")]
+position = Vector2(498, 305)
+
+[node name="Create" parent="YSorted" instance=ExtResource("2_x1kg3")]
+position = Vector2(807, 182)
+
+[node name="Create2" parent="YSorted" instance=ExtResource("2_x1kg3")]
+position = Vector2(180, 203)
+
+[node name="Create3" parent="YSorted" instance=ExtResource("2_x1kg3")]
+position = Vector2(317, 395)
+
+[node name="Create4" parent="YSorted" instance=ExtResource("2_x1kg3")]
+position = Vector2(757, 409)

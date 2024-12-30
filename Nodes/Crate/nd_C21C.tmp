@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bav8jmefpc8wi"]
+
+[ext_resource type="Texture2D" uid="uid://1qg868l82anf" path="res://icon.svg" id="1_n3orj"]
+[ext_resource type="Script" path="res://Scripts/sc_fix_rotation.gd" id="2_6buru"]
+[ext_resource type="Script" path="res://Scripts/sc_pushable_object.gd" id="3_ukpdo"]
+[ext_resource type="Script" path="res://Scripts/sc_pushable_area.gd" id="4_qiy1n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpgd8"]
+size = Vector2(94, 22.6924)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jgon"]
+size = Vector2(96, 25.3076)
+
+[node name="Create" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.622053, 0.415929, 0.404052, 1)
+position = Vector2(0, -35.3076)
+scale = Vector2(0.776444, 0.776444)
+texture = ExtResource("1_n3orj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.346203)
+shape = SubResource("RectangleShape2D_mpgd8")
+
+[node name="FixRotation" type="Node" parent="."]
+script = ExtResource("2_6buru")
+
+[node name="PushableObject" type="Node" parent="."]
+script = ExtResource("3_ukpdo")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_qiy1n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.346203)
+shape = SubResource("RectangleShape2D_4jgon")
